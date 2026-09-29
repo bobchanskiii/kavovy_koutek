@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kávový Koutek | Objednávka a rezervace</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="objednavka.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Hlavní navigace">
+        <a href="index.html">Úvod</a>
+        <a href="cenik.html">Ceník</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="objednavka.html" aria-current="page">Objednávka a rezervace</a>
+      </nav>
+      <h1>Kávový Koutek</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Objednávka a rezervace</h2>
+        <p>Vyberte si občerstvení k vyzvednutí nebo si požádejte o rezervaci stolu.</p>
+        <p class="form-note">
+          Po odeslání se otevře váš e-mailový program s připravenou zprávou. Objednávku i rezervaci
+          vám potvrdíme e-mailem.
+        </p>
+
+        <form class="booking-form" id="booking-form">
+          <fieldset>
+            <legend>Co si přejete?</legend>
+            <div class="form-options">
+              <label>
+                <input type="radio" name="request-type" value="order" checked />
+                Předobjednat občerstvení
+              </label>
+              <label>
+                <input type="radio" name="request-type" value="reservation" />
+                Rezervovat stůl
+              </label>
+            </div>
+          </fieldset>
+
+          <div id="order-fields">
+            <fieldset>
+              <legend>Co připravit k vyzvednutí</legend>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="item">Položka</label>
+                  <select id="item" name="item" required>
+                    <option value="Espresso">Espresso</option>
+                    <option value="Cappuccino">Cappuccino</option>
+                    <option value="Latte macchiato">Latte macchiato</option>
+                    <option value="Větrník s ovocem">Větrník s ovocem</option>
+                    <option value="Sendvič se sýrem a salátem">Sendvič se sýrem a salátem</option>
+                    <option value="Cheesecake">Cheesecake</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="quantity">Počet kusů</label>
+                  <input id="quantity" name="quantity" type="number" min="1" max="20" value="1" required />
+                </div>
+                <div class="form-field">
+                  <label for="pickup-date">Datum vyzvednutí</label>
+                  <input id="pickup-date" name="pickup-date" type="date" required />
+                </div>
+                <div class="form-field">
+                  <label for="pickup-time">Čas vyzvednutí</label>
+                  <input id="pickup-time" name="pickup-time" type="time" min="07:30" max="19:00" required />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div id="reservation-fields" hidden>
+            <fieldset>
+              <legend>Detaily rezervace</legend>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="reservation-date">Datum</label>
+                  <input id="reservation-date" name="reservation-date" type="date" disabled required />
+                </div>
+                <div class="form-field">
+                  <label for="reservation-time">Čas</label>
+                  <input id="reservation-time" name="reservation-time" type="time" min="07:30" max="19:00" disabled required />
+                </div>
+                <div class="form-field">
+                  <label for="guests">Počet osob</label>
+                  <input id="guests" name="guests" type="number" min="1" max="12" value="2" disabled required />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <fieldset>
+            <legend>Kontaktní údaje</legend>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="customer-name">Jméno</label>
+                <input id="customer-name" name="customer-name" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="customer-email">E-mail</label>
+                <input id="customer-email" name="customer-email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-field">
+                <label for="customer-phone">Telefon (nepovinné)</label>
+                <input id="customer-phone" name="customer-phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="note">Poznámka (nepovinné)</label>
+              <textarea id="note" name="note" rows="3"></textarea>
+            </div>
+          </fieldset>
+
+          <button class="form-submit" type="submit">Pokračovat k odeslání e-mailem</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Nikita
+    </footer>
+  </body>
+</html>
