@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f1ea;
+  color: #2d1b12;
+}
+
+header {
+  background: linear-gradient(135deg, #4a2c1d, #7a4b2a);
+  color: #fffaf5;
+  padding: 1.5rem 2rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #fffaf5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(74, 44, 29, 0.08);
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #d4b7a2;
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+th {
+  background: #f0d9c7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+figure {
+  margin: 0;
+  background: #faf5f1;
+  border: 1px solid #e5d3c4;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: #5a3b2d;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background: #2d1b12;
+  color: #f8efe8;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+}
